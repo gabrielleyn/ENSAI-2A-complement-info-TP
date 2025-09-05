@@ -1,7 +1,7 @@
-from business_object.pokemon.abstract_pokemon import Pokemon
+from business_object.pokemon.abstract_pokemon import AbstractPokemon
 
 
-class AttackerPokemon(Pokemon):
+class AttackerPokemon(AbstractPokemon):
     def __init__(self):
         super().__init__()
 

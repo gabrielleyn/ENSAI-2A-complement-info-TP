@@ -1,11 +1,11 @@
-from business_object.pokemon.abstract_pokemon import Pokemon
+from business_object.pokemon.abstract_pokemon import AbstractPokemon
 
 
-class AllRounderPokemon(Pokemon):
+class AllRounderPokemon(AbstractPokemon):
     def __init__(self):
         super().__init__()
 
-    def get_pokemon_all_rounder_coef(self) -> float:
+    def get_pokemon_attack_coef(self) -> float:
         """
         Commentaire
         """

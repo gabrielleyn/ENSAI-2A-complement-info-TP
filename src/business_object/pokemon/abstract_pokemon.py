@@ -3,7 +3,7 @@ import copy
 from business_object.statistic import Statistic
 
 
-class Pokemon:
+class AbstractPokemon:
     """
     A Pokemon
     """
