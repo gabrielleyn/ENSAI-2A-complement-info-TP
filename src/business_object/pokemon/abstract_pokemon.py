@@ -1,9 +1,10 @@
 import copy
+from abc import ABC, abstractmethod
 
 from business_object.statistic import Statistic
 
 
-class AbstractPokemon:
+class AbstractPokemon(ABC):
     """
     A Pokemon
     """
@@ -25,7 +26,7 @@ class AbstractPokemon:
     # -------------------------------------------------------------------------
     # Methods
     # -------------------------------------------------------------------------
-
+    @abstractmethod
     def get_pokemon_attack_coef(self) -> float:
         """
         Compute a damage multiplier related to the pokemon type.
@@ -33,26 +34,14 @@ class AbstractPokemon:
         Returns :
             float : the multiplier
         """
-        if self._type == "Attacker":
-            multiplier = 1 + (self.speed_current + self.attack_current) / 200
-        elif self._type == "Defender":
-            multiplier = 1 + (self.attack_current + self.defense_current) / 200
-        elif self._type == "All rounder":
-            multiplier = 1 + (self.sp_atk_current + self.sp_def_current) / 200
-        elif self._type == "Speedster":
-            multiplier = 1 + (self.speed_current + self.sp_atk_current) / 200
-        elif self._type == "Supporter":
-            multiplier = 1 + (self.sp_atk_current + self.defense_current) / 200
-        else:
-            raise Exception("unknown type")
-
-        return multiplier
+        pass
 
     def level_up(self) -> None:
         """
         Increase the level by one
         """
         self._level += 1
+        return self._level
 
     def reset_actual_stat(self) -> None:
         self._stat_current = copy.deepcopy(self._stat_max)
