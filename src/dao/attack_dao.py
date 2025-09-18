@@ -43,6 +43,8 @@ class AttackDao(metaclass=Singleton):
 
         return created
 
+    def find_attack_by_id(self, id :int)    
+
 
 if __name__ == "__main__":
     # Pour charger les variables d'environnement contenues dans le fichier .env
