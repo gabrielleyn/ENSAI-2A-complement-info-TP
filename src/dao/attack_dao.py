@@ -43,7 +43,7 @@ class AttackDao(metaclass=Singleton):
 
         return created
 
-    def find_attack_by_id(self, id :int)    
+    def find_attack_by_id(self, id :int) ->    
 
 
 if __name__ == "__main__":
